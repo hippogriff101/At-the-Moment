@@ -3,8 +3,11 @@
 A social media web application where you can share your mood with anyone.
 
 ## Features
-- Post anonymously multiple times a day.
+- Post whenever you want only with emojis.
 - End of Day Journal
+
+## Tech Stats
+Built in HTMl & CSS with ChatGPT
 
 ## Collaborators
 
