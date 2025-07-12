@@ -21,32 +21,69 @@
 
     <main>
       <section class="prompt">
-        <h2>What are you doing right now?</h2>
+        <h2>How do you feel at the moment?</h2>
         <p class="activity-suggestion">
-          🎯 Random prompt: <strong>Homework</strong>
+          
         </p>
-        <textarea placeholder="Type what you're doing..."></textarea>
-        <button>Post</button>
+        <div class="emoji-options">
+          <button class="emoji-btn" data-emoji="😊">😊</button>
+          <button class="emoji-btn" data-emoji="😢">😢</button>
+          <button class="emoji-btn" data-emoji="😠">😠</button>
+          <button class="emoji-btn" data-emoji="😴">😴</button>
+          <button class="emoji-btn" data-emoji="🤩">🤩</button>
+        </div>
+        <button id="postButton">Post</button>
       </section>
 
-      <section class="feed">
-        <h2>Today’s Activity Log</h2>
-        <div class="post">📚 15:12 - Doing some math homework</div>
-        <div class="post">💪 12:03 - Gym time</div>
-        <div class="post">☕ 10:00 - Coffee and journaling</div>
-      </section>
+    
 
       <section class="journal">
         <h2>📝 End-of-Day Journal</h2>
         <textarea
-          placeholder="What went well today? What didn’t? Reflect here..."
+          placeholder="This won't be shared. This is just for you!"
         ></textarea>
         <button>Save Entry</button>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2025 AtTheMoment. All rights reserved.</p>
+      <p>&copy; 2025 At The Moment. All rights reserved.</p>
     </footer>
+
+    <script>
+      //Function to check if current time is between 18:00 and 18:10
+      function isPostingTime() {
+
+        const now = new Date(); //stores the current date and time in a variable named now
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+
+        //Check if the current time is between 18:00 and 18:10 - next steps would be to replace this with a randomly generated time
+        return (hours === 15 && minutes >= 50 && minutes <= 59);
+
+    
+      }
+
+      //Function to update button based on current time
+      function updatePostButton() {
+        const postButton = document.getElementById('postButton');
+        if (isPostingTime()) {
+          postButton.textContent = '=>';
+          postButton.onclick = null; //This disables the button - next steps would be to make this such that it actually posts something
+        } else {
+          postButton.textContent = 'Locked';
+          postButton.onclick = function() {
+            alert("We'll notify you when it's time to post!");
+            return false; //note to self: this prevents the default button action, which is nothing in this case anyways 
+          };
+          }
+        }
+
+        //When page loads, execute the updatePostButton function
+        window.onload = updatePostButton;
+
+        setInterval(updatePostButton, 60000); //Check every minute
+      
+    </script>
   </body>
 </html>

@@ -159,3 +159,35 @@ footer {
     color: #555;
     padding-bottom: 0.5rem;
 }
+
+.image-post {
+  margin-top: 8px;
+}
+
+.caption {
+  margin-top: 4px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.emoji-options {
+        display: flex;
+        gap: 10px;
+        margin: 15px 0;
+      }
+.emoji-btn {
+        font-size: 2rem;
+        background: none;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        padding: 5px 15px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+.emoji-btn:hover {
+        background: #f0f0f0;
+      }
+.emoji-btn.selected {
+        border-color: #4CAF50;
+        background: #e8f5e9;
+      }
