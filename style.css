@@ -100,3 +100,25 @@ footer {
     font-size: 0.9rem;
     color: #777;
 }
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.avatar-placeholder {
+    width: 64px;
+    height: 64px;
+    background-color: #ddd;
+    border-radius: 50%;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-section {
+    margin-top: 2rem;
+}
