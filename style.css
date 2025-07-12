@@ -161,33 +161,64 @@ footer {
 }
 
 .image-post {
-  margin-top: 8px;
+    margin-top: 8px;
 }
 
 .caption {
-  margin-top: 4px;
-  font-size: 0.9em;
-  color: #666;
+    margin-top: 4px;
+    font-size: 0.9em;
+    color: #666;
 }
 
 .emoji-options {
-        display: flex;
-        gap: 10px;
-        margin: 15px 0;
-      }
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
 .emoji-btn {
-        font-size: 2rem;
-        background: none;
-        border: 2px solid #ddd;
-        border-radius: 10px;
-        padding: 5px 15px;
-        cursor: pointer;
-        transition: all 0.2s;
-      }
+    font-size: 2rem;
+    background: none;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
 .emoji-btn:hover {
-        background: #f0f0f0;
-      }
+    background: #f0f0f0;
+}
+
 .emoji-btn.selected {
-        border-color: #4CAF50;
-        background: #e8f5e9;
-      }
+    border-color: #4CAF50;
+    background: #e8f5e9;
+}
+
+/* Hide the actual input */
+#myFile {
+    display: none;
+}
+
+/* Styled label as a button */
+.custom-upload {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    user-select: none;
+}
+
+.custom-upload:hover {
+    background-color: #3730a3;
+}
+
+#postButton {
+    margin-top: 15px;
+}
