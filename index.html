@@ -45,6 +45,10 @@
       </section>
     </main>
 
+    <footer>
+      <p>&copy; 2025 AtTheMoment. All rights reserved.</p>
+    </footer>
+
     <script>
   const saveBtn = document.querySelector('.journal button');
   const textarea = document.querySelector('.journal textarea');
@@ -52,29 +56,28 @@
   saveBtn.addEventListener('click', () => {
     const entry = textarea.value.trim();
     if (entry) {
-      // Get existing entries
-      let journalEntries = JSON.parse(localStorage.getItem('journalEntries') || '[]');
+      // Get existing entries or create empty array
+      const journalEntries = JSON.parse(localStorage.getItem('journalEntries') || '[]');
 
-      // Add new entry
+      // Add new entry with timestamp
       journalEntries.push({
         text: entry,
         date: new Date().toLocaleDateString()
       });
 
-      // Save back to localStorage
+      // Save updated array
       localStorage.setItem('journalEntries', JSON.stringify(journalEntries));
 
-      // Feedback message
+      // Show confirmation
       saveBtn.textContent = 'Saved!';
       textarea.value = '';
 
-      setTimeout(() => saveBtn.textContent = 'Save Entry', 2000);
+      setTimeout(() => {
+        saveBtn.textContent = 'Save Entry';
+      }, 2000);
     }
   });
 </script>
 
-    <footer>
-      <p>&copy; 2025 AtTheMoment. All rights reserved.</p>
-    </footer>
   </body>
 </html>
