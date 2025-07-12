@@ -73,23 +73,28 @@
         </div>
       </section>
 
-      <section class="profile-section">
-        <h2>My Journal Entries</h2>
-        <div class="post">
-          📝 2025-07-11 — Felt productive today. Managed to finish my workout
-          and study for physics.
-        </div>
-        <div class="post">
-          📝 2025-07-10 — Tired all day. Didn't do much, but that’s okay.
-        </div>
-        <div class="post">
-          📝 2025-07-9 — Felt sad today.
-        </div>
-      </section>
-    </main>
+
+     <section class="profile-section">
+      <h2>My Journal Entries</h2>
+      <div id="journal-entries-container"></div>
+      </section> 
+
+
+    <script>
+  const container = document.getElementById("journal-entries-container");
+  const entries = JSON.parse(localStorage.getItem("journalEntries") || "[]");
+
+  entries.reverse().forEach(entry => {
+    const div = document.createElement("div");
+    div.className = "post";
+    div.textContent = `📝 ${entry.date} — ${entry.text}`;
+    container.appendChild(div);
+  });
+</script>
 
     <footer>
       <p>&copy; 2025 At The Moment. All rights reserved.</p>
     </footer>
+    </main>    
   </body>
 </html>
